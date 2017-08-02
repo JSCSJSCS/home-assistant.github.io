@@ -13,7 +13,7 @@ featured: true
 Setup and manage a [Let's Encrypt](https://letsencrypt.org/) certificate. This will create a certificate on the first run and renew it if the certificate is expiring in the next 30 days.
 
 <p class='note warning'>
-This add-on need port 80/443 to verify the certificate request, please stop all add-ons they use also this ports, otherwise you can not start this add-on.
+This add-on needs ports 80 and 443 in order to verify the certificate request. Please stop all add-ons that also use these ports, otherwise you cannot start this add-on.
 </p>
 
 ```json
@@ -26,7 +26,7 @@ This add-on need port 80/443 to verify the certificate request, please stop all 
 
 Configuration variables:
 
-- **challenge** (*Optional*): Default it use 443 ('https') you can change it to 'http' for use port 80.
+- **challenge** (*Optional*): Default is to use 'http' (port 443) you can change it to 'http' to use port 80.
 - **email** (*Required*): Your email address for registration on Let's Encrypt.
 - **domains** (*Required*): A list of domains to create/renew the certificate.
 
