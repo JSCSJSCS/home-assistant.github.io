@@ -10,7 +10,7 @@ footer: true
 redirect_from: /hassio/addon_tutorial/
 ---
 
-So you've got Home Assistant going and you've been enjoying the built-in add-ons but you're missing this one application. Time to make your own add-on! In Hass.io 0.24 we introduced the option to have local add-ons be build on your device. This is great for developing new add-ons locally.
+So you've got Home Assistant going and you've been enjoying the built-in add-ons, but you're missing this one application. Time to make your own add-on! In Hass.io 0.24, we introduced the option to have local add-ons be built on your device. This is great for developing new add-ons locally.
 
 To get started with developing add-ons, we first need access to where Hass.io looks for local add-ons. For this you can use the Samba add-on or the SSH add-on.
 
@@ -23,7 +23,7 @@ If you are on macOS and the folder is not showing up automatically, go to Finder
 With Samba add-on enabled, you can browse to your Hass.io server over the local network. It will contain an addons folder to store your local add-ons.
 </p>
 
-For SSH, you will have to install it. Before you can start it, you will have to have a private/public key pair and store your public key in the add-on config ([see docs for more info][ssh]). Once started, you can SSH to Hass.io and store your custom add-ons in "/addons".
+For SSH, you will have to install it. Before you can start it, you will have to have a private/public key pair and store your public key in the SSH add-on config file ([see docs for more info][ssh]). Once started, you can SSH to Hass.io and store your custom add-ons in "/addons".
 
 <p class='img'>
 <img src='/images/hassio/tutorial/ssh.png' />
@@ -37,7 +37,7 @@ Once you have located your add-on directory, it's time to get started!
 ## {% linkable_title Step 1: The basics %}
 
  - Create a new directory called `hello_world`
- - Inside that directory create three files.
+ - Inside that directory, create the following three files.
 
 `Dockerfile`:
 ```
@@ -73,18 +73,18 @@ echo Hello world!
 
 ## {% linkable_title Step 2: Installing and testing your add-on %}
 
-Now comes the fun part, time to open the Hass.io UI and install and run your add-on.
+Now comes the fun part; time to open the Hass.io UI and install and run your add-on.
 
  - Open the Home Assistant frontend
  - Go to the Hass.io panel
- - On the top right click the shopping basket to go to the add-on store.
+ - On the top right, click the shopping basket to go to the add-on store.
 
 <p class='img'>
 <img src='/images/hassio/screenshots/main_panel_store_icon.png' />
 From the Hass.io main panel open the add-on store.
 </p>
 
- - On the top right click the refresh button
+ - On the top right, click the refresh button.
  - You should now see a new card called "Local" that lists your add-on!
 
 <p class='img'>
@@ -95,7 +95,8 @@ The Hass.io add-on store will list all available local add-ons.
  - Click on your add-on to go to the add-on details page.
  - Install your add-on
  - Start your add-on
- - Refresh the logs of your add-on, you should now see "Hello world!" in your logs.
+ - Refresh the logs of your add-on.
+ - You should now see "Hello world!" in your logs.
 
 <p class='img'>
 <img src='/images/hassio/tutorial/addon_hello_world_logs.png' />
@@ -104,7 +105,7 @@ The add-on will print Hello world to the logs and then quit.
 
 ### {% linkable_title I don't see my add-on?! %}
 
-Oops! You clicked refresh in the store and your add-on didn't show up. Or maybe you just updated an option, clicked refresh and saw your add-on disappear.
+Oops! You clicked refresh in the store and your add-on didn't show up? Or maybe you just updated an option, clicked refresh and saw your add-on disappear?
 
 When this happens, it means that your `config.json` is invalid. It's either invalid JSON or one of the specified options is incorrect. To see what went wrong, go to the Hass.io panel and in the supervisor card click on "View logs". This should bring you to a page with the logs of the supervisor. Scroll to the bottom and you should be able to find the validation error.
 
@@ -126,7 +127,7 @@ Add to your `Dockerfile` before `RUN`:
 # Install requirements for add-on
 RUN apk add --no-cache python3
 
-# Python 3 HTTP Server serves the current working dir
+# Python 3 HTTP Server serves the current working directory.
 # So let's set it to our add-on persistent data directory.
 WORKDIR /data
 ```
@@ -149,7 +150,7 @@ Add "ports" to `config.json`. This will make TCP on port 8000 inside the contain
 }
 ```
 
-Update `run.sh` to start the Python 3 server:
+Update `run.sh` to start the Python 3 server.
 
 ```
 python3 -m http.server
