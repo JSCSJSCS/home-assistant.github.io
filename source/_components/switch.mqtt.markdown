@@ -44,7 +44,7 @@ Configuration variables:
 - **value_template** (*Optional*): Defines a [template](/docs/configuration/templating/#processing-incoming-data) to extract a value from the payload.
 
 <p class='note warning'>
-Make sure that your topic match exact. `some-topic/` and `some-topic` are different topics.
+Make sure that your topic is an exact match. `some-topic/` and `some-topic` are different topics.
 </p>
 
 ## {% linkable_title Examples %}
