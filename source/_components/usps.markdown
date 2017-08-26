@@ -21,11 +21,11 @@ To enable this component, add the following lines to your `configuration.yaml`:
 ```yaml
 # Example configuration.yaml entry
 usps:
-    username: YOUR_USERNAME
-    password: YOUR_PASSWORD
+  username: YOUR_USERNAME
+  password: YOUR_PASSWORD
 ```
 
-You will see two new sensors, one for packages and one for mail and a camera to rotate through images of incoming mail for the current day.
+You will see two new sensors; one for packages and one for mail and also a camera to rotate through images of incoming mail for the current day.
 
 Configuration options for the USPS component:
 
